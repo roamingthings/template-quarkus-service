@@ -16,6 +16,14 @@ Dev UI available at <http://localhost:8080/q/dev/>.
 ../gradlew clean build
 ```
 
+## Integration Tests
+
+Integration tests (`*IT` classes with `@QuarkusIntegrationTest`) run against the packaged application, separate from unit tests:
+
+```bash
+../gradlew integrationTest
+```
+
 ## Uber-JAR
 
 ```bash

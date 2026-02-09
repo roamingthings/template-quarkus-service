@@ -182,7 +182,11 @@ in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
 ## Integration Tests
 
-- MUST end integration tests with IT suffix
+- MUST end integration test classes with IT suffix
+- MUST place integration tests in `src/test/java` of the service module
+- MUST use `@QuarkusIntegrationTest` annotation for integration tests
+- MUST NOT include integration tests in the `test` task; they run via the `integrationTest` Gradle task
+- MUST run integration tests with `gradle integrationTest`; this task depends on `quarkusBuild`
 
 ## System Tests (ST)
 

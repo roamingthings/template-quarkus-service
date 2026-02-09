@@ -22,6 +22,12 @@ See [docs/project-structure.md](docs/project-structure.md) for architecture deta
 cd my-service && ../gradlew clean build
 ```
 
+Unit tests run as part of the build. Integration tests (`*IT` classes) run separately against the packaged application:
+
+```bash
+cd my-service && ../gradlew integrationTest
+```
+
 ## Dev Mode
 
 ```bash
