@@ -35,3 +35,18 @@ tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.compilerArgs.add("-parameters")
 }
+
+tasks.test {
+    exclude("**/*IT.class")
+}
+
+val integrationTest by tasks.registering(Test::class) {
+    description = "Runs integration tests."
+    group = "verification"
+    val testSourceSet = sourceSets["test"]
+    testClassesDirs = testSourceSet.output.classesDirs
+    classpath = testSourceSet.runtimeClasspath
+    include("**/*IT.class")
+    useJUnitPlatform()
+    dependsOn("quarkusBuild")
+}
