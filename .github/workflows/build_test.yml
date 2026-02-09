@@ -43,8 +43,14 @@ jobs:
         working-directory: ./my-service
         run: gradle clean build
 
-      - name: Publish Unit Test Results
+      - name: Integration Test
+        working-directory: ./my-service
+        run: gradle integrationTest
+
+      - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@27d65e188ec43221b20d26de30f4892fad91df2f # v2.22.0
         if: always()
         with:
-          files: "**/build/test-results/test/**/*.xml"
+          files: |
+            **/build/test-results/test/**/*.xml
+            **/build/test-results/integrationTest/**/*.xml
