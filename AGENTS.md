@@ -153,6 +153,8 @@ in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
 ## JavaDoc
 
+- MUST use markdown documentation comments (`///`) instead of traditional Javadoc (`/** ... */`)
+- MUST use markdown syntax for formatting within documentation comments
 - MUST NOT write obvious JavaDoc comments that rephrase code
 - MUST document the intentions and the "why", not implementation details
 - MUST either describe the "why" or not comment at all
