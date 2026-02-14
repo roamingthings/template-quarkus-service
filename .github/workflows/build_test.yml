@@ -43,6 +43,10 @@ jobs:
         working-directory: ./my-service
         run: gradle clean build
 
+      - name: Build System Test Module
+        working-directory: ./my-service-st
+        run: gradle clean build -x test
+
       - name: Integration Test
         working-directory: ./my-service
         run: gradle integrationTest
