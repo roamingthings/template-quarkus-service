@@ -17,6 +17,7 @@ dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-rest-client")
+    implementation("io.quarkus:quarkus-rest-client-jackson")
     implementation(libs.jspecify)
     testImplementation("io.quarkus:quarkus-junit")
     testImplementation(libs.assertj.core)
