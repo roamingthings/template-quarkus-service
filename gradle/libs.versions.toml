@@ -1,12 +1,20 @@
 [versions]
 assertj = "3.27.7"
+errorprone-core = "2.47.0"
+errorprone-plugin = "5.0.0"
 jspecify = "1.0.0"
 junitJupiter = "6.0.2"
+nullaway = "0.13.1"
+nullaway-plugin = "3.0.0"
 slf4j = "2.0.17"
 
 [libraries]
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone-core" }
+errorprone-gradle-plugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version.ref = "errorprone-plugin" }
 jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
 junit-jupiter-bom = { module = "org.junit:junit-bom", version.ref = "junitJupiter" }
+nullaway = { module = "com.uber.nullaway:nullaway", version.ref = "nullaway" }
+nullaway-gradle-plugin = { module = "net.ltgt.gradle:gradle-nullaway-plugin", version.ref = "nullaway-plugin" }
 slf4j-bom = { module = "org.slf4j:slf4j-bom", version.ref = "slf4j" }
 slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }

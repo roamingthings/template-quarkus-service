@@ -72,6 +72,13 @@ Implement validation for Product: price must be positive, name must not be empty
 Use a sealed result type with Success and ValidationError cases.
 ```
 
+## Nullability Enforcement
+
+[JSpecify](https://jspecify.dev/) annotations with [NullAway](https://github.com/uber/NullAway) enforce nullability at
+compile time. Top-level `package-info.java` files declare `@NullMarked`; use `@Nullable` only where null is explicitly
+allowed. The `nullability-conventions` Gradle plugin in [`build-logic/`](build-logic/) centralizes the Error Prone and
+NullAway configuration for all modules.
+
 ## Development Guidelines
 
 This project follows coding conventions defined in [AGENTS.md](AGENTS.md). Key principles:
@@ -80,4 +87,5 @@ This project follows coding conventions defined in [AGENTS.md](AGENTS.md). Key p
 - Java 25 modern syntax (var, records, pattern matching)
 - Package-private visibility by default
 - System.Logger for logging
+- JSpecify nullability with compile-time enforcement via NullAway
 - KISS and YAGNI

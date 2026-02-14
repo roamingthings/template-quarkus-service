@@ -14,6 +14,11 @@ The root `settings.gradle.kts` uses `includeBuild` to wire them together, allowi
 
 ```
 project-root/
+├── build-logic/                                      # CONVENTION PLUGINS
+│   ├── build.gradle.kts
+│   ├── settings.gradle.kts
+│   └── src/main/kotlin/
+│       └── nullability-conventions.gradle.kts
 ├── gradle/
 │   └── libs.versions.toml                          # Shared version catalog
 ├── settings.gradle.kts                              # Composite build (includeBuild)
@@ -75,13 +80,23 @@ as the service module.
 - MicroProfile REST Client
 - JUnit 5, AssertJ
 
+## `build-logic/` - Convention Plugins
+
+Shared Gradle convention plugins applied by all modules. Contains:
+
+- **`nullability-conventions`** - Configures Error Prone with NullAway to enforce JSpecify nullability annotations at
+  compile time. All Error Prone checks are disabled except NullAway, which runs in JSpecify mode with `@NullMarked`
+  scope enforcement.
+
 ## Key Decisions
 
 1. **Composite build over multi-project:** Each module has its own `build.gradle.kts` and `settings.gradle.kts`,
    connected via `includeBuild` in the root
 2. **Shared version catalog:** `gradle/libs.versions.toml` ensures consistent dependency versions
-3. **Dual-purpose `-st` module:** Avoids a separate module for API client interfaces while keeping system tests isolated
-4. **BCE architecture:** Business components organized by responsibility, not technical layer
+3. **Convention plugins via `build-logic/`:** Centralized build configuration (e.g., nullability enforcement) applied
+   consistently across all modules
+4. **Dual-purpose `-st` module:** Avoids a separate module for API client interfaces while keeping system tests isolated
+5. **BCE architecture:** Business components organized by responsibility, not technical layer
 
 ## Build Commands
 
