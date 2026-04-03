@@ -161,6 +161,10 @@ Rename all Java source directories and update package declarations and imports.
 1. `de.roamingthings.myservice` → `{APP_PACKAGE}` (most specific first)
 2. `de.roamingthings` → `{APP_PACKAGE}` (native-test classes — least specific last)
 
+**Also update JavaDoc/comments** that reference the old package name. For example, the template's
+`package-info.java` contains placeholder text mentioning "myservice" — rewrite the comment to
+describe the actual application rather than referring to a template placeholder.
+
 **Move source files** to match new package paths in:
 - `{PROJECT_NAME}/src/main/java/`
 - `{PROJECT_NAME}/src/test/java/`
@@ -192,13 +196,19 @@ In `.github/workflows/build_test.yml`, update all `working-directory` fields:
 - Replace `./my-service` with `./{PROJECT_NAME}`
 - Replace `./my-service-st` with `./{PROJECT_NAME}-st`
 
-### Step 10: Update README.md
+### Step 10: Update README Files
 
+**Root `README.md`:**
 - Replace title with project name
 - Update module directory names (`my-service` → `{PROJECT_NAME}`, `my-service-st` → `{PROJECT_NAME}-st`)
 - Update build commands to use new directory names
 - Remove the "Using This Template" section (no longer a template)
 - Remove reference to `BOOTSTRAP.md`
+
+**`{PROJECT_NAME}/README.md`** (module-level README):
+- Replace the title `# my-service` with `# {PROJECT_NAME}`
+- Replace all remaining `my-service` references (e.g., Docker image names in build/run commands)
+  with `{PROJECT_NAME}`
 
 ### Step 11: Update `docs/project-structure.md`
 
