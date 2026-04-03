@@ -44,33 +44,25 @@ cd my-service-st && ../gradlew clean test
 
 Configure the service base URI via `BASE_URI` environment variable or `application.properties`.
 
-## Using This Template with Coding Agents
+## Using This Template
 
-Fork this repository and use a coding agent to customize the template.
+To bootstrap a new project from this template, point your AI coding agent to this repository and have it
+read [BOOTSTRAP.md](https://github.com/roamingthings/template-quarkus-service/blob/main/BOOTSTRAP.md),
+which contains the complete scaffolding specification including questions to gather, transformation steps,
+and cleanup.
 
-### Setup Prompts
+### Example (Claude Code)
 
-**1. Rename the service:**
-
-```
-Rename "my-service" to "inventory-service". Update all module names, package names,
-and references accordingly.
-```
-
-**2. Add a JAX-RS resource:**
-
-```
-Add a ProductsResource that handles CRUD operations for a Product entity with
-fields: id (String), name (String), price (BigDecimal). Follow BCE architecture
-and create a corresponding REST client interface in the -st module.
+```bash
+mkdir my-project && cd my-project
+claude
+# then type: Bootstrap this project from https://github.com/roamingthings/template-quarkus-service
 ```
 
-**3. Add business logic:**
+### Example (Other AI Agents)
 
-```
-Implement validation for Product: price must be positive, name must not be empty.
-Use a sealed result type with Success and ValidationError cases.
-```
+Start your agent in an empty directory and ask it to set up a project from this template URL.
+The agent should fetch and follow the instructions in BOOTSTRAP.md.
 
 ## Nullability Enforcement
 
