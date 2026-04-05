@@ -22,6 +22,7 @@ dependencies {
     implementation(libs.jspecify)
     testImplementation("io.quarkus:quarkus-junit")
     testImplementation("io.rest-assured:rest-assured")
+    testImplementation(libs.assertj.core)
 }
 
 group = "de.roamingthings"

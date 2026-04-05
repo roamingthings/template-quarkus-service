@@ -3,7 +3,6 @@ package de.roamingthings.myservice.greetings.boundary;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import io.quarkiverse.mcp.server.test.McpAssured;
-import io.quarkiverse.mcp.server.test.McpStreamableTestClient;
 import io.quarkus.test.junit.QuarkusTest;
 import java.util.Map;
 import org.junit.jupiter.api.Test;

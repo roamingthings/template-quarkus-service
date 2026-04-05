@@ -1,4 +1,4 @@
-package de.roamingthings;
+package de.roamingthings.myservice.greetings.boundary;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

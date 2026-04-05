@@ -16,11 +16,11 @@ val quarkusPlatformVersion: String by project
 dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-arc")
-    implementation("io.quarkiverse.mcp:quarkus-mcp-server-http:1.11.0")
+    implementation(libs.quarkus.mcp.server.http)
     implementation("io.quarkus:quarkus-smallrye-health")
     implementation(libs.jspecify)
     testImplementation("io.quarkus:quarkus-junit")
-    testImplementation("io.quarkiverse.mcp:quarkus-mcp-server-test:1.11.0")
+    testImplementation(libs.quarkus.mcp.server.test)
     testImplementation(libs.assertj.core)
 }
 
