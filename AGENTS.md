@@ -16,14 +16,15 @@ in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
 ## Logging
 
-- MUST use java.lang.System.Logger instead of System.out statements
-- MUST NOT use java.util.logging.Logger
+- MUST use org.slf4j.Logger and org.slf4j.LoggerFactory instead of System.out statements
+- MUST NOT use java.lang.System.Logger or java.util.logging.Logger
 - MUST name Logger fields LOGGER (uppercase) and mark them as static final
+- MUST create loggers with `LoggerFactory.getLogger(ClassName.class)`
 - MUST use the following semantics for log levels:
-    - **Debug:** Debug information for development
-    - **Info:** "As expected by default" - normal operations
-    - **Warn:** "To be looked at tomorrow" - potential issues
-    - **Error:** "Wake me up in the middle of the night" - critical failures
+    - **debug:** Debug information for development
+    - **info:** "As expected by default" - normal operations
+    - **warn:** "To be looked at tomorrow" - potential issues
+    - **error:** "Wake me up in the middle of the night" - critical failures
 
 ## BCE/ECB Architecture
 

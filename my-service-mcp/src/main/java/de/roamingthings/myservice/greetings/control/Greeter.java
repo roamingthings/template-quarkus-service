@@ -13,7 +13,7 @@ public class Greeter {
     static final Logger LOGGER = LoggerFactory.getLogger(Greeter.class);
 
     @Inject
-    @ConfigProperty(defaultValue = "hello, Quarkus on BCE", name="message")
+    @ConfigProperty(defaultValue = "hello, Quarkus MCP on BCE", name = "message")
     String message;
 
     public String greetings() {
@@ -21,7 +21,9 @@ public class Greeter {
         return this.message;
     }
 
-    public void greetings(String userMessage) {
-        LOGGER.info("received: {}", userMessage);
+    public String greetings(String name) {
+        var personalGreeting = "Hello, " + name + "!";
+        LOGGER.info("greeting: {}", personalGreeting);
+        return personalGreeting;
     }
 }
