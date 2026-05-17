@@ -6,7 +6,7 @@ jspecify = "1.0.0"
 junitJupiter = "6.0.3"
 nullaway = "0.13.1"
 nullaway-plugin = "3.0.0"
-slf4j = "2.0.17"
+slf4j = "2.0.18"
 
 [libraries]
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
